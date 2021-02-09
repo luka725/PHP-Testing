@@ -1,5 +1,6 @@
 <?php
 include 'constants.php';
+include 'db.php';
 require_once('submit.php');
 ?>
 
@@ -17,7 +18,7 @@ require_once('submit.php');
 <input type="submit" value="Enter" name="button"></input> 
 </form>
 </div>
-<div><?php print_r($CFG); ?></div> 
+<div><?php print_r($CFG); ?><br><?php OpenCon() ?></div> 
 </html>
 
 
