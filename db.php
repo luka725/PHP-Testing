@@ -2,7 +2,9 @@
 /**
  * Creating database connection class
  */
-include 'constants.php';
+
+require 'constants.php';
+global $CFG;
 
 function OpenCon()
  {
@@ -12,8 +14,10 @@ function OpenCon()
  $db = $CGF->db_name;
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
  
- return $conn;
- }
+
+echo($CFG->{$host});
+return $conn;
+}
  
 function CloseCon($conn)
  {
