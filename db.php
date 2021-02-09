@@ -7,10 +7,7 @@ include 'submit.php';
 
 
 class DB {
-    public $aMemberVar = 'aMemberVar Member Variable';
-    public $aFuncName = 'aMemberFunc';
-   
-   
+      
     function read() {
         print 'Inside `aMemberFunc()`';
     }
