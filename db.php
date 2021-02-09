@@ -11,7 +11,7 @@ function OpenCon()
  $dbhost = $CFG->host;
  $dbuser = $CFG->db_user;
  $dbpass = $CFG->db_pass;
- $db = $CGF->db_name;
+ $db = $CFG->db_name;
  $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
  
 

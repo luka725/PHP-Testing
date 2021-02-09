@@ -1,6 +1,5 @@
 <?php
 // Declaring Database
-$test = "Hello World!";
 $CFG = new stdClass();
 
 $CFG->db_name = 'cfg';
