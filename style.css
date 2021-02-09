@@ -1,0 +1,8 @@
+body{
+    background-color: aquamarine;
+}
+.form-div{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
