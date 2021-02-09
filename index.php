@@ -1,34 +1,42 @@
-<?php
-include 'constants.php';
-require_once('submit.php');
-?>
-
+<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
+  <title>Add Records in Database</title>
 </head>
+<body>
 
-<div class="form-div">
-<form action=""; method="get">
-<label>Name:
-<input type="text" placeholder="name" name="firstname"></input>
-<label>Surname:
-<input type="text" placeholder="Surname" name="surname"></input>
-<input type="submit" value="Enter" name="button"></input> 
-</form>
-</div>
-<div><?php print_r($CFG); ?></div> 
-</html>
+<?php
+include "db.php"; // Using database connection file here
 
+if(isset($_POST['submit']))
+{		
+    $fullname = $_POST['fullname'];
+    $surname = $_POST['surname'];
 
+    $insert = mysqli_query($db,"INSERT INTO `tblemp`(`fullname`, `surname`) VALUES ('$fullname','$surname')");
 
+    if(!$insert)
+    {
+        echo mysqli_error();
+    }
+    else
+    {
+        echo "Records added successfully.";
+    }
+}
 
-
-<?
-//render the form
-//read from the db and echo as ul and li
-//require_once ('constants.php');
-//require_once ('db.php');
-//global $CFG;
-//$db = new DB;
+mysqli_close($db); // Close connection
 ?>
+
+<h3>Fill the Form</h3>
+
+<form method="POST">
+  Full Name : <input type="text" name="fullname" placeholder="Enter Full Name" Required>
+  <br/>
+  Surname : <input type="text" name="Surname" placeholder="Enter surname" Required>
+  <br/>
+  <input type="submit" name="submit" value="Submit">
+</form>
+
+</body>
+</html>
