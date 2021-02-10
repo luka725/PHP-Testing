@@ -1,24 +1,35 @@
 <?php
 include 'constants.php';
 include 'db.php';
-require_once('submit.php');
-?>
+global $CFG;
+$db = new DB();
+$db2 = new DB();
 
+$db->tablename = 'user_info';
+$db->dbhost = $CFG->host;
+$db->dbuser = $CFG->db_user;
+$db->dbpass = $CFG->db_pass;
+$db->db = $CFG->db_name;
+
+$result = $db->read();
+
+?>
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
 </head>
-
+<body>
 <div class="form-div">
-<form action=""; method="get">
+<form action="submit.php"; method="post">
 <label>Name:
 <input type="text" placeholder="name" name="firstname"></input>
 <label>Surname:
 <input type="text" placeholder="Surname" name="surname"></input>
-<input type="submit" value="Enter" name="button"></input> 
+<input type="submit" value="Enter" name="submit"></input> 
 </form>
 </div>
-<div><?php print_r($CFG); ?><br><?php OpenCon() ?></div> 
+<div><?php print_r($result); ?></div> 
+</body>
 </html>
 
 

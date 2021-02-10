@@ -3,39 +3,38 @@
  * Creating database connection class
  */
 
-require 'constants.php';
-global $CFG;
-
-function OpenCon()
- {
- $dbhost = $CFG->host;
- $dbuser = $CFG->db_user;
- $dbpass = $CFG->db_pass;
- $db = $CFG->db_name;
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- 
-
-echo($CFG->{$host});
-return $conn;
-}
- 
-function CloseCon($conn)
- {
- $conn -> close();
- }
-   
-
-
 class DB {
-      
-    function read() {
-        print 'Inside `aMemberFunc()`';
+    
+    public $name;
+    public $surname;
+    public $tablename;
+    public $dbhost;
+    public $dbuser;
+    public $dbpass;
+    public $db;
+    private $conn;
+
+    private function OpenCon(){
+        $this->conn = new mysqli($this->dbhost, $this->dbuser, $this->dbpass,$this->db) or die("Connect failed: %s\n". $conn -> error);
     }
 
-    function write() {
-        print 'Inside `aMemberFunc()`';
+    private function CloseCon(){
+        $this->conn -> close();
+    }
+        
+    public function read() {
+        $this->OpenCon();
+        $ret =  $this->conn->query( 'SELECT * FROM '.$this->tablename );
+        $this->CloseCon();
+        return $ret;
+    }
+
+    public function write() {
+        $this->OpenCon();
+        $sql = "INSERT INTO $this->tablename (names, surname) VALUES ('$this->name', '$this->surname')";
+        //$sql = ' INSERT INTO '.$this->tablename.'(names, surname) VALUES ('.$this->name.', '.$this->surname.')';
+        $this->conn -> query($sql);
+        $this->CloseCon();
     }
 }
-
-
 ?>
