@@ -1,5 +1,7 @@
 <?php
-// Declaring Database
+/**
+ * Database details are created here  
+ */
 $CFG = new stdClass();
 
 $CFG->db_name = 'cfg';
