@@ -27,12 +27,13 @@ $result = $db->read();
 <input type="submit" value="Enter" name="submit"></input> 
 </form>
 </div>
-<div><?php 
+<div><center><?php 
 foreach($result as $key=>$value){
-    echo print_r($key);
-         print_r($value); 
+         //print_r($key);
+         echo $value['name']." ".$value['surname'];
+         echo '<br>'; 
 }
-?></div> 
+?></center></div> 
 </body>
 </html>
 

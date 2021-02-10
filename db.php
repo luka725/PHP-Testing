@@ -31,7 +31,15 @@ class DB {
 
     public function write() {
         $this->OpenCon();
+        
         $sql = "INSERT INTO $this->tablename (name, surname) VALUES ('$this->name', '$this->surname')";
+        //$sql = ' INSERT INTO '.$this->tablename.'(names, surname) VALUES ('.$this->name.', '.$this->surname.')';
+        $this->conn -> query($sql);
+        $this->CloseCon();
+    }
+    public function write2() {
+        $this->OpenCon();
+        $sql = "INSERT INTO $this->tablename (first, second) VALUES ('$this->name', '$this->surname')";
         //$sql = ' INSERT INTO '.$this->tablename.'(names, surname) VALUES ('.$this->name.', '.$this->surname.')';
         $this->conn -> query($sql);
         $this->CloseCon();

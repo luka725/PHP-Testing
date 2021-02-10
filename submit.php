@@ -21,6 +21,14 @@
     $db->surname = $lastname;
     $db->write();
     
+    $db2->tablename = 'information';
+    $db2->dbhost = 'localhost';
+    $db2->dbuser = 'cfg';
+    $db2->db = 'db_test';
+    $db2->dbpass = '12345678';
+    $db2->name = $firstname;
+    $db2->surname = $lastname;
+    $db2->write2();
 
     header("Location: http://localhost/");
     exit();
