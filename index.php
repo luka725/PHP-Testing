@@ -12,7 +12,6 @@ $db->dbpass = $CFG->db_pass;
 $db->db = $CFG->db_name;
 
 $result = $db->read();
-
 ?>
 <html>
 <head>
@@ -28,7 +27,12 @@ $result = $db->read();
 <input type="submit" value="Enter" name="submit"></input> 
 </form>
 </div>
-<div><?php print_r($result); ?></div> 
+<div><?php 
+foreach($result as $key=>$value){
+    echo print_r($key);
+         print_r($value); 
+}
+?></div> 
 </body>
 </html>
 
