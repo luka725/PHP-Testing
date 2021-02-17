@@ -19,6 +19,6 @@ if ($conn->query($sql) === TRUE){
 	echo "Error: <br>" . $conn->error ;
 }
 $conn->close();
-header("location: http://localhost/single.php");
+header("location: http://localhost/login.php");
 exit();
 ?>

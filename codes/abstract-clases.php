@@ -43,7 +43,7 @@ class ChildClass extends ParentClass{
 		if ( $name == "John Doe" ){
 			$prefix = "Mr. ";
 		}
-		if ( $name ==Î "Jane Doe" ){
+		if ( $name == "Jane Doe" ){
 			$prefix = "Mrs. ";
 		}
 		else {
@@ -56,6 +56,5 @@ class ChildClass extends ParentClass{
 $class = new ChildClass;
 echo $class->prefixName( "John Doe" );
 echo $class->prefixName( "Jane Doe" );
-
 
 ?>

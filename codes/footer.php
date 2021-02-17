@@ -7,7 +7,7 @@ function footr(){
         <a href='https://apps.apple.com/us/app/ptc-mobile/id1542598581'><img src='apple.png'></a>
 	</div>
 	<div class='button image'></div>
-</footer>";Î
+</footer>";
 }
 footr();
 ?>

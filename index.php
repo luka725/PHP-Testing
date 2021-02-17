@@ -1,6 +1,6 @@
 <html>
 <head>
-</heaarset="UTF-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>User Registration</title>
@@ -15,7 +15,7 @@
 <input type="text" placeholder="Surname:" name="surname" required><br><br>
 <input type="email" placeholder="Email:" name="email"  required><br><br>
 <input type="password" placeholder="Password:" name="password" required><br><br>
-<input type="submit"> 
+<input type="submit" id="button"> 
 </form>
 </div>
 <?php require "footer.php";?>
